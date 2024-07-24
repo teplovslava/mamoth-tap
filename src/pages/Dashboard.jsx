@@ -74,7 +74,7 @@ export default function Dashboard() {
 
   return (
     
-      <div className=" py-[24px] px-[17px] flex flex-col items-center gap-[8px] pb-[80px] h-full overflow-auto">
+      <div className=" py-[24px] px-[17px] flex flex-col items-center gap-[8px] pb-[100px] h-full overflow-auto">
         <div className="elem-bg_green px-[8px] rounded-[40px] w-auto flex flex-row items-center gap-[8px]">
           <img src={crownSvg} alt="" />
           <p className="font-comic text-gradient font-bold text-sm">
@@ -103,6 +103,7 @@ export default function Dashboard() {
           </h3>
           {fakeData.map((user, i) => (
             <div
+              key={i}
               className={`py-[10px] flex flex-row items-center justify-between w-full ${
                 i !== fakeData.length - 1 ? "border-b" : ""
               } border-white/20`}
@@ -148,6 +149,7 @@ export default function Dashboard() {
           <div className="flex flex-col w-full">
             {fakeData2.map((user, i) => (
               <div
+              key={i}
                 className={`py-[5px] flex flex-row items-center justify-between w-full ${
                   i !== fakeData.length - 1 ? "border-b" : ""
                 } border-white/20`}

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import moneyImgage from "../assets/images/money.png";
 import CustomSelect from "./CustomSelect";
-import Button from "./Button";
 
 export default function BuyCardModal({ setShowModal, data }) {
   const [currentChoosedTarrif, setCurrentChoosedTarrif] = useState(0);

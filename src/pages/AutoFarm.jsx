@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import Button from "../component/Button";
 import BuyCard from "../component/BuyCard";
 
 import case1 from "../assets/icons/case1.svg";
@@ -174,7 +173,7 @@ export default function AutoFarm() {
   };
 
   return (
-    <div className=" py-[24px] px-[17px] flex flex-col items-center gap-[8px] pb-[80px] h-full overflow-auto">
+    <div className=" py-[24px] px-[17px] flex flex-col items-center gap-[8px] pb-[100px] h-full overflow-auto">
       <BuyCard data={firstCardData} />
       <BuyCard data={secondCardData} />
       <BuyCard data={thirdCardData} />

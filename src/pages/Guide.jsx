@@ -6,19 +6,17 @@ import case1 from "../assets/images/case-gradient.png";
 import case2 from "../assets/images/case-gradient1.png";
 import case3 from "../assets/images/case-gradient2.png";
 import case4 from "../assets/images/case-gradient3.png";
-import key1 from "../assets/icons/key1.svg";
-import key2 from "../assets/icons/key2.svg";
-import key3 from "../assets/icons/key3.svg";
-import key4 from "../assets/icons/key4.svg";
 import clock from "../assets/icons/icon__clock.svg";
 import star1 from "../assets/icons/icon__star1.svg";
 import star2 from "../assets/icons/icon__star2.svg";
 import star3 from "../assets/icons/icon__star3.svg";
 import star4 from "../assets/icons/icon__star4.svg";
 import star5 from "../assets/icons/icon__star5.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Guide() {
   const [currentStep, setCurrentStep] = useState(0);
+  const navigate = useNavigate();
   const pages = [
     <GuideFirstStep />,
     <GuideSecondStep />,
@@ -31,6 +29,7 @@ export default function Guide() {
   const increaseStep = () => {
     setCurrentStep((prev) => {
       if (prev + 1 > pages.length - 1) {
+        navigate("/");
         return prev;
       } else {
         return prev + 1;
@@ -130,7 +129,7 @@ function GuideThirdStep() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="flex flex-col items-center justify-center h-full px-[17px]">
       <img className="w-[300px] h-[300px]" src={case1} alt="" />
       <div className="flex flex-col items-center mb-[40px] px-[10px] mt-[-50px]">
         <h3 className="text-[32px] font-comic text-white font-bold  w-full text-center">
@@ -194,7 +193,7 @@ function GuideFourthStep() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="flex flex-col items-center justify-center h-full px-[17px]">
       <img className="w-[300px] h-[300px]" src={case2} alt="" />
       <div className="flex flex-col items-center mb-[40px] px-[10px] mt-[-50px]">
         <h3 className="text-[32px] font-comic text-white font-bold  w-full text-center">
@@ -263,7 +262,7 @@ function GuideFifthStep() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="flex flex-col items-center justify-center h-full px-[17px]">
       <img className="w-[300px] h-[300px]" src={case3} alt="" />
       <div className="flex flex-col items-center mb-[40px] px-[10px] mt-[-50px]">
         <h3 className="text-[32px] font-comic text-white font-bold  w-full text-center">
