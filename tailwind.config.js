@@ -20,6 +20,7 @@ module.exports = {
       },
       backgroundImage: {
         'bgMain': "url('/src/assets/images/bg-main.png')",
+        'bgLoading': "url('/src/assets/images/loading-bg.png')",
       }
     },
   },

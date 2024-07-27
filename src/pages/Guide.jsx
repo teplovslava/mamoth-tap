@@ -38,7 +38,7 @@ export default function Guide() {
   };
 
   return (
-    <div className="flex flex-col py-[20px] h-full">
+    <div className="flex flex-col py-[20px] h-full overlow">
       <div className="flex flex-row items-center gap-[5px] px-[10px]">
         {pages.map((page, i) => {
           const isActivePage = i === currentStep;
@@ -52,7 +52,7 @@ export default function Guide() {
           );
         })}
       </div>
-      <div className="flex-1">{pages[currentStep]}</div>
+      <div className="flex-1 overflow-auto">{pages[currentStep]}</div>
       <div className="px-[10px]">
         <button
           onClick={increaseStep}
