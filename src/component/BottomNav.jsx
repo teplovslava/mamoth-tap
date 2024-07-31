@@ -10,12 +10,15 @@ export default function BottomNav() {
     route.path.includes(currentPath)
   );
 
+  const routesVisibleElemCount = routes.filter((route) => route.visible).length
+  const activeNavElemWidth = 100 / routesVisibleElemCount
+
   return (
     routesCurrentIndex > -1 && (
       <div className="absolute bottom-[10px] left-[17px] right-[17px]">
-        <nav className="bg-bgColorGreen backdrop-blur-xl h-[76px] rounded-[15px] w-full relative">
+        <nav className="bg-[#103029] h-[76px] rounded-[15px] w-full relative">
             <div
-              style={{ width: "25%", left: `${routesCurrentIndex > 3 ? 0 : routesCurrentIndex * 25}%` }}
+              style={{ width: `${activeNavElemWidth}%` , left: `${routesCurrentIndex > (routesVisibleElemCount - 1) ? 0 : routesCurrentIndex  * activeNavElemWidth}%` }}
               className=" absolute h-full z-0 p-[4px] transition-all"
             >
               <div className="elem-bg_green h-full w-full rounded-[12px]"></div>
@@ -35,12 +38,7 @@ export default function BottomNav() {
                       const normalOpacity = isActive || link.icon === "mamoth";
                       return (
                         <>
-                          <Icon
-                            styles={{ opacity: normalOpacity ? 1 : 0.3 }}
-                            name={link.icon}
-                            size={link.icon === "mamoth" ? 38 : 24}
-                            color={isActive ? "#79F2CE" : "#fff"}
-                          />
+                          <img src={link.icon} alt="" />
                           {link.label}
                         </>
                       );

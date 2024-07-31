@@ -40,8 +40,8 @@ function Clicker({ handleClick }) {
     const elWidth = e.target.getBoundingClientRect().width;
     const elHalfWidth = elWidth / 2;
 
-    const randomAngel = Math.floor(Math.random() * 90);
-    const randomDistance = Math.floor(Math.random() * 15 + elHalfWidth);
+    const randomAngel = Math.floor(Math.random() * 45 + 45);
+    const randomDistance = Math.floor(Math.random() * 15 + elHalfWidth + 50);
 
     const x = elHalfWidth + randomDistance * Math.cos(randomAngel * halfCircle) * sign;
     const y = elWidth - randomDistance * Math.sin(randomAngel * halfCircle);

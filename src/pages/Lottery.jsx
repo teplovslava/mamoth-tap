@@ -17,28 +17,28 @@ export default function Lottery() {
       present: "Lamborgini",
     },
     {
-      title: "Сильвер",
+      title: "Голд",
       icon: star2,
       count: 700,
       maxCount: 2000,
       present: "Lamborgini",
     },
     {
-      title: "Сильвер",
+      title: "Платина",
       icon: star3,
       count: 1200,
       maxCount: 2000,
       present: "Lamborgini",
     },
     {
-      title: "Сильвер",
+      title: "Блек",
       icon: star4,
       count: 100,
       maxCount: 2000,
       present: "Lamborgini",
     },
     {
-      title: "Сильвер",
+      title: "Ультима",
       icon: star5,
       count: 700,
       maxCount: 2000,
@@ -87,11 +87,11 @@ export default function Lottery() {
               <div className="flex flex-row justify-between items-center">
                 <div className="flex flex-row gap-[10px] items-start">
                   <img src={item.icon} alt="" />
-                  <p className="text-white font-comic text-[18px]">
+                  <p className="text-white font-comic text-[18px] font-bold">
                     {item.title}
                   </p>
                 </div>
-                <p className="text-[#45E9B8] font-comic text-[20px]">
+                <p className="text-[#45E9B8] font-comic text-[20px] font-bold">
                   {item.present}
                 </p>
               </div>
@@ -102,10 +102,10 @@ export default function Lottery() {
                 ></div>
               </div>
               <p className="text-center">
-                <span className="text-[14px] text-white font-comic">
+                <span className="text-[14px] text-white font-comic font-bold">
                   {item.count}
                 </span>
-                <span className="text-[14px] text-[#9B9B9B] font-comic">
+                <span className="text-[14px] text-[#9B9B9B] font-comic font-bold">
                   /{item.maxCount}
                 </span>
               </p>

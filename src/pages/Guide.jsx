@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import mammothImage from "../assets/images/mammoth.png";
 import mammothWithMoneyImage from "../assets/images/mammoth-money.png";
@@ -6,13 +7,15 @@ import case1 from "../assets/images/case-gradient.png";
 import case2 from "../assets/images/case-gradient1.png";
 import case3 from "../assets/images/case-gradient2.png";
 import case4 from "../assets/images/case-gradient3.png";
+import case5 from "../assets/images/case-gradient4.png";
 import clock from "../assets/icons/icon__clock.svg";
 import star1 from "../assets/icons/icon__star1.svg";
 import star2 from "../assets/icons/icon__star2.svg";
 import star3 from "../assets/icons/icon__star3.svg";
 import star4 from "../assets/icons/icon__star4.svg";
 import star5 from "../assets/icons/icon__star5.svg";
-import { useNavigate } from "react-router-dom";
+import coinsIcon from "../assets/icons/icon__coins.svg";
+
 
 export default function Guide() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -20,10 +23,11 @@ export default function Guide() {
   const pages = [
     <GuideFirstStep />,
     <GuideSecondStep />,
-    <GuideThirdStep />,
-    <GuideFourthStep />,
     <GuideFifthStep />,
-    <GuideSixthStep/>
+    <GuideThirdStep />,
+    <GuideSevenStep />,
+    <GuideFourthStep />,
+    <GuideSixthStep />,
   ];
 
   const increaseStep = () => {
@@ -172,23 +176,28 @@ function GuideFourthStep() {
   const data = [
     {
       image: clock,
-      time: "6 часов",
-      count: 1,
+      time: "X5",
+      count: 10,
     },
     {
       image: clock,
-      time: "12 часов",
-      count: 2,
+      time: "X6",
+      count: 20,
     },
     {
       image: clock,
-      time: "18 часов",
-      count: 3,
+      time: "X7",
+      count: 30,
     },
     {
       image: clock,
-      time: "24 часа",
-      count: 4,
+      time: "X8",
+      count: 40,
+    },
+    {
+      image: clock,
+      time: "X10",
+      count: 50,
     },
   ];
 
@@ -238,26 +247,31 @@ function GuideFifthStep() {
       image: star1,
       time: "Сильвер",
       count: 1,
+      percents: 50,
     },
     {
       image: star2,
       time: "Голд",
       count: 2,
+      percents: 100,
     },
     {
       image: star3,
       time: "Платина",
       count: 3,
+      percents: 150,
     },
     {
       image: star4,
       time: "Блек",
       count: 4,
+      percents: 200,
     },
     {
       image: star5,
       time: "Ультима",
       count: 5,
+      percents: 250,
     },
   ];
 
@@ -288,6 +302,7 @@ function GuideFifthStep() {
               </p>
             </div>
             <p className="text-[#45E9B8] font-bold font-comic text-xl">
+            {tarrif.percents && <span className="text-white">+ { tarrif.percents}% {" "}</span>}
               {tarrif.count} TON
             </p>
           </div>
@@ -300,68 +315,141 @@ function GuideFifthStep() {
 }
 
 function GuideSixthStep() {
-    const data = [
-      {
-        image: star1,
-        time: "Сильвер",
-        count: 'Розыгрыш Lamborghini',
-      },
-      {
-        image: star2,
-        time: "Голд",
-        count: 'Розыгрыш квартиры стоимостью $500,000',
-      },
-      {
-        image: star3,
-        time: "Платина",
-        count: 'Розыгрыш $1,000,000',
-      },
-      {
-        image: star4,
-        time: "Блек",
-        count: 'Розыгрыш $5,000,000',
-      },
-      {
-        image: star5,
-        time: "Ультима",
-        count: 'Розыгрыш $10,000,000',
-      },
-    ];
-  
-    return (
-      <div className="flex flex-col items-center justify-center h-full px-[20px]">
-        <img className="w-[300px] h-[300px]" src={case4} alt="" />
-        <div className="flex flex-col items-center mb-[40px] px-[10px] mt-[-50px]">
-          <h3 className="text-[32px] font-comic text-white font-bold  w-full text-center">
+  const data = [
+    {
+      image: star1,
+      time: "Сильвер",
+      count: "Розыгрыш Lamborghini",
+    },
+    {
+      image: star2,
+      time: "Голд",
+      count: "Розыгрыш квартиры стоимостью $500,000",
+    },
+    {
+      image: star3,
+      time: "Платина",
+      count: "Розыгрыш $1,000,000",
+    },
+    {
+      image: star4,
+      time: "Блек",
+      count: "Розыгрыш $5,000,000",
+    },
+    {
+      image: star5,
+      time: "Ультима",
+      count: "Розыгрыш $10,000,000",
+    },
+  ];
+
+  return (
+    <div className="flex flex-col items-center justify-center h-full px-[20px]">
+      <img className="w-[300px] h-[300px]" src={case4} alt="" />
+      <div className="flex flex-col items-center mb-[40px] px-[10px] mt-[-50px]">
+        <h3 className="text-[32px] font-comic text-white font-bold  w-full text-center">
           Лотерея
-          </h3>
-          <p className="text-base font-comic text-white text-center w-[307px]">
+        </h3>
+        <p className="text-base font-comic text-white text-center w-[307px]">
           Каждый статус дает возможность участвовать в розыгрышах:
-          </p>
-        </div>
-  
-        <div className="flex flex-col items-center elem-bg_green p-[15px] rounded-[15px] w-full mb-[10px] gap-[8px]">
-          {data.map((tarrif, i) => (
-            <div
-              key={i}
-              className={`w-full flex flex-row items-center gap-[8px] justify-between pb-[8px] ${
-                i !== data.length - 1 ? "border-b" : ""
-              } border-white/20`}
-            >
-              <div className="flex flex-row items-center  gap-[8px]">
-                <img src={tarrif.image} alt="" />
-                <p className="text-white font-bold font-comic text-lg">
-                  {tarrif.time}
-                </p>
-              </div>
-              <p className="text-white font-bold font-comic text-xs text-end">
-                {tarrif.count}
+        </p>
+      </div>
+
+      <div className="flex flex-col items-center elem-bg_green p-[15px] rounded-[15px] w-full mb-[10px] gap-[8px]">
+        {data.map((tarrif, i) => (
+          <div
+            key={i}
+            className={`w-full flex flex-row items-center gap-[8px] justify-between pb-[8px] ${
+              i !== data.length - 1 ? "border-b" : ""
+            } border-white/20`}
+          >
+            <div className="flex flex-row items-center  gap-[8px]">
+              <img src={tarrif.image} alt="" />
+              <p className="text-white font-bold font-comic text-lg">
+                {tarrif.time}
               </p>
             </div>
-          ))}
-        </div>
-  
-        <p className="text-white/50 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]"></p>
+            <p className="text-white font-bold font-comic text-xs text-end">
+              {tarrif.count}
+            </p>
+          </div>
+        ))}
       </div>
-    );
-  }
+
+      <p className="text-white/50 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]"></p>
+    </div>
+  );
+}
+
+function GuideSevenStep() {
+  const data = [
+    {
+      image: coinsIcon,
+      time: 50,
+      count: 1,
+      percents: 50,
+    },
+    {
+      image: coinsIcon,
+      time: 100,
+      count: 2,
+      percents: 100,
+    },
+    {
+      image: coinsIcon,
+      time: 150,
+      count: 3,
+      percents: 150,
+    },
+    {
+      image: coinsIcon,
+      time: 200,
+      count: 4,
+      percents: 200,
+    },
+    {
+      image: coinsIcon,
+      time: 250,
+      count: 5,
+      percents: 250,
+    },
+  ];
+
+  return (
+    <div className="flex flex-col items-center justify-center h-full px-[20px]">
+      <img className="w-[300px] h-[300px]" src={case5} alt="" />
+      <div className="flex flex-col items-center mb-[40px] px-[10px] mt-[-50px]">
+        <h3 className="text-[32px] font-comic text-white font-bold  w-full text-center">
+          Буст
+        </h3>
+        <p className="text-base font-comic text-white text-center w-[307px]">
+          Покупай буст, получай увеличенное колличество монет{" "}
+        </p>
+      </div>
+
+      <div className="flex flex-col items-center elem-bg_green p-[15px] rounded-[15px] w-full mb-[10px] gap-[8px]">
+        {data.map((tarrif, i) => (
+          <div
+            key={i}
+            className={`w-full flex flex-row items-center gap-[8px] justify-between pb-[8px] ${
+              i !== data.length - 1 ? "border-b" : ""
+            } border-white/20`}
+          >
+            <div className="flex flex-row items-center  gap-[8px]">
+              <img src={tarrif.image} alt="" />
+              <p className="text-white font-bold font-comic text-lg">
+                +{tarrif.time}
+              </p>
+            </div>
+            <p className="text-[#45E9B8] font-bold font-comic text-xl">
+              {tarrif.percents && <span className="text-white">+ { tarrif.percents}% {" "}</span>}
+              {tarrif.count} TON
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <p className="text-white/50 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]"></p>
+    </div>
+  );
+}

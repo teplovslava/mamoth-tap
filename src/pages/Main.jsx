@@ -9,7 +9,7 @@ import LanguageSelectModal from "../component/LanguageSelectModal";
 export default function Main() {
   const [count, setCount] = useState(100000);
   const [langSelectOpen, setLangSelectOpen] = useState(false)
-  const step = 15;
+  const step = 100000;
 
   const incrementCount = useCallback(() => {
     setCount((prev) => (prev += step));

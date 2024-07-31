@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { calculateFontSize } from "../helper/calculateFontSize";
-import caseIcon from "../assets/icons/icon__case.svg";
-import walletIcon from "../assets/icons/icon__wallet.svg";
+
 import coinsIcon from "../assets/icons/icon__coins.svg";
+import tasksIcon from '../assets/icons/icon__tasks.png'
+import fermIcon from '../assets/icons/icon__ferm.png'
+import walletIcon from '../assets/icons/icon__wallet.png'
+import Timer from "./Timer";
 
 export default function ControlPanel({ count }) {
   const [unlimited, setUnlimited] = useState(false);
   const [autoFarm, setAutoFarm] = useState(false);
+  const [bust, setBust] = useState(false);
 
   const userInfo = {
     name: "Nickname",
@@ -14,14 +18,12 @@ export default function ControlPanel({ count }) {
     levelMax: 20,
   };
 
-  const maxCount = 10000000;
+
 
   const formatCount = new Intl.NumberFormat("en-US").format(count); // форматирует число
-  const formatMaxCount = new Intl.NumberFormat("en-US").format(maxCount); // форматирует число
 
   const countFontSize = calculateFontSize(formatCount, 50, 7); // динамически считает размер
   const smallCountFontSize = calculateFontSize(formatCount, 18, 7);
-  const maxCountFontSize = calculateFontSize(formatMaxCount, 14, 7);
 
   const unlimitedClick = () => {
     setUnlimited((prev) => !prev);
@@ -30,6 +32,12 @@ export default function ControlPanel({ count }) {
   const autoFarmClick = () => {
     setAutoFarm((prev) => !prev);
   };
+
+  const bustClick = () => {
+    setBust((prev) => !prev);
+  };
+
+
   return (
     <div className="flex flex-row items-center gap-[10px] justify-between w-full">
       <div className="flex flex-col gap-[10px]">
@@ -59,6 +67,19 @@ export default function ControlPanel({ count }) {
           </span>
           <span className="text-gradient">Auto Farm</span>
         </button>
+        <button
+          onClick={bustClick}
+          className="elem-bg_green text-[10px]  font-comic rounded-[13px] flex flex-col items-center justify-center p-[8px]"
+        >
+          <span
+            className={`font-bold text-[22px] ${
+              bust ? "text-gradient" : "text-gradient_red"
+            }`}
+          >
+            {bust ? "ON" : "OFF"}
+          </span>
+          <span className="text-gradient">Буст</span>
+        </button>
       </div>
       <div className="flex flex-col items-center gap-[5px]">
         <p className="text-sm text-white font-comic font-bold">
@@ -73,7 +94,7 @@ export default function ControlPanel({ count }) {
         </p>
         <div className="flex flex-row items-center justify-center gap-[5px]">
           <img className="w-[32px]" src={coinsIcon} alt="" />
-          <p>
+          <p className="flex flex-row items-center">
             <span
               style={{ fontSize: smallCountFontSize }}
               className="text-lg font-comic font-bold text-[#FFCC48]"
@@ -81,22 +102,25 @@ export default function ControlPanel({ count }) {
               {formatCount}
             </span>
             <span
-              style={{ fontSize: maxCountFontSize }}
-              className="text-sm font-comic font-bold text-[#9B9B9B]"
+              className="text-sm font-comic font-bold text-[#9B9B9B] flex flex-row items-center"
             >
-              /{formatMaxCount}
+              / <Timer time={1722459094734}/>
             </span>
           </p>
         </div>
       </div>
       <div className="flex flex-col gap-[10px]">
         <button className="elem-bg_green text-[10px]  font-comic rounded-[13px] flex flex-col items-center justify-center p-[8px]">
-          <img src={caseIcon} alt="" />
-          <span className="text-gradient">Безлимит</span>
+          <img className="relative top-[-18px] mb-[-15px]" src={tasksIcon} alt="" />
+          <span className="text-gradient">Задания</span>
         </button>
         <button className="elem-bg_green text-[10px]  font-comic rounded-[13px] flex flex-col items-center justify-center p-[8px]">
-          <img src={walletIcon} alt="" />
+          <img className="relative top-[-18px] mb-[-15px]" src={walletIcon} alt="" />
           <span className="text-gradient">Кошелек</span>
+        </button>
+        <button className="elem-bg_green text-[10px]  font-comic rounded-[13px] flex flex-col items-center justify-center p-[8px]">
+          <img className="relative top-[-18px] mb-[-15px]" src={fermIcon} alt="" />
+          <span className="text-gradient">Ферма</span>
         </button>
       </div>
     </div>
