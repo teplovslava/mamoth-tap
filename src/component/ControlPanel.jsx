@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { calculateFontSize } from "../helper/calculateFontSize";
 
 import coinsIcon from "../assets/icons/icon__coins.svg";
-import tasksIcon from '../assets/icons/icon__tasks.png'
-import fermIcon from '../assets/icons/icon__ferm.png'
-import walletIcon from '../assets/icons/icon__wallet.png'
+import tasksIcon from '../assets/icons/icon__tasks.svg'
+import fermIcon from '../assets/icons/icon__ferm.svg'
+import walletIcon from '../assets/icons/icon__wallet.svg'
 import Timer from "./Timer";
 
 export default function ControlPanel({ count }) {

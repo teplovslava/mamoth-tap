@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { calculateFontSize } from "../helper/calculateFontSize";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
 const HOUR = MINUTE * 60;
 
 export default function Timer({ time }) {
+
+
   const [timer, setTimer] = useState({
     hours: 0,
     minutes: 0,
@@ -29,8 +32,9 @@ export default function Timer({ time }) {
 
   useEffect(() => {
     const interval = setInterval(calculateRestTime, 1000);
+    const diff = time - Date.now();
 
-    if (timer.hours < 0 && timer.minutes < 0 && timer.seconds < 0) {
+    if (diff < 0) {
       clearInterval(interval);
     }
 
@@ -39,9 +43,12 @@ export default function Timer({ time }) {
     };
   }, [time]);
 
+
+  const smallCountFontSize = calculateFontSize(`${timer.hours}${timer.minutes}${timer.seconds}` , 14, 6);
+
   return (
-    <span className="flex flex-row items-center">
-      <span>{timer.hours}ч</span>
+    <span style={{fontSize:smallCountFontSize}} className={`flex flex-row items-center`}>
+          <span>{timer.hours}ч</span>
       <span>:</span>
       <span>{timer.minutes}м</span>
       <span>:</span>

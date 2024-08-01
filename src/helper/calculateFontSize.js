@@ -3,6 +3,6 @@ export const calculateFontSize = (num, baseSize, maxLength) => {
     if (length <= maxLength) {
       return baseSize
     } else {
-      return baseSize *  maxLength / length * 0.99
+      return baseSize *  maxLength / length * 0.97
     }
 }

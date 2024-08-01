@@ -4,11 +4,11 @@ import Lottery from "../pages/Lottery";
 import Main from "../pages/Main";
 import Wallet from "../pages/Wallet";
 
-import mamothIcon from "../assets/icons/icon__nav-mamoth.png";
-import dashboardIcon from "../assets/icons/icon__nav-dashboard.png";
-import autofarmIcon from "../assets/icons/icon__nav-autofarm.png";
-import lotteryIcon from "../assets/icons/icon__nav-lottery.png";
-import gamesIcon from "../assets/icons/icon__nav-games.png";
+import mamothIcon from "../assets/icons/icon__nav-mamoth.svg";
+import dashboardIcon from "../assets/icons/icon__nav-dashboard.svg";
+import autofarmIcon from "../assets/icons/icon__nav-autofarm.svg";
+import lotteryIcon from "../assets/icons/icon__nav-lottery.svg";
+import gamesIcon from "../assets/icons/icon__nav-games.svg";
 
 export const routes = [
   {

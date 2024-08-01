@@ -19,7 +19,12 @@ module.exports = {
         "bgColorPink": "var(--bg-color-pink)",
       },
       backgroundImage: {
-        'bgMain': "url('/src/assets/images/bg-main.png')",
+        'bgMain1': "url('/src/assets/images/bg-main-1.png')",
+        'bgMain2': "url('/src/assets/images/bg-main-2.png')",
+        'bgMain3': "url('/src/assets/images/bg-main-3.png')",
+        'bgMain4': "url('/src/assets/images/bg-main-4.png')",
+        'bgMain5': "url('/src/assets/images/bg-main-5.png')",
+        'bgMain6': "url('/src/assets/images/bg-main-6.png')",
         'bgLoading': "url('/src/assets/images/loading-bg.png')",
       }
     },
