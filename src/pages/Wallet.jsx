@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import lock from "../assets/images/wallet-lock.png";
 import { Icon } from "../component/IconSprite";
+
+import lock from "../assets/images/wallet-lock.png";
 import coinsSvg from "../assets/icons/icon__coins.svg";
 
 export default function Wallet() {
