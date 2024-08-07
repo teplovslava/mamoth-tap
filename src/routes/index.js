@@ -14,9 +14,10 @@ export const routes = [
   {
     path: "/",
     element: <Main />,
-    label: "Games",
+    label: "Home",
     icon: mamothIcon,
     visible: true,
+    disable: false,
   },
   {
     path: "/dashboard",
@@ -24,6 +25,7 @@ export const routes = [
     label: "Дашборд",
     icon: dashboardIcon,
     visible: true,
+    disable: false,
   },
   {
     path: "/auto-farm",
@@ -31,6 +33,7 @@ export const routes = [
     label: "Auto Farm",
     icon: autofarmIcon,
     visible: true,
+    disable: false,
   },
   {
     path: "/lottery",
@@ -38,6 +41,7 @@ export const routes = [
     label: "Лоторея",
     icon: lotteryIcon,
     visible: true,
+    disable: false,
   },
   {
     path: "/games",
@@ -45,6 +49,7 @@ export const routes = [
     label: "Games",
     icon: gamesIcon,
     visible: true,
+    disable: true,
   },
   {
     path: "/wallet",
@@ -52,5 +57,6 @@ export const routes = [
     label: null,
     icon: null,
     visible: false,
+    disable: false,
   },
 ];

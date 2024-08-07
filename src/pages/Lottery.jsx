@@ -6,6 +6,10 @@ import star2 from "../assets/icons/icon__star2.svg";
 import star3 from "../assets/icons/icon__star3.svg";
 import star4 from "../assets/icons/icon__star4.svg";
 import star5 from "../assets/icons/icon__star5.svg";
+import ticketIcon from "../assets/icons/icon__ticket.svg";
+import key3 from "../assets/icons/key3.svg";
+import case3 from "../assets/icons/case3.svg";
+import BuyCard from "../component/BuyCard";
 
 export default function Lottery() {
   const data = [
@@ -46,6 +50,50 @@ export default function Lottery() {
     },
   ];
 
+  const cardData = {
+    index: 2,
+    colorClass: "elem-bg_yellow",
+    title: "Покупка билетов лотереи",
+    descr: "",
+    image: case3,
+    tarrifs: [
+      {
+        image: ticketIcon,
+        time: "1 билет",
+        count: 10,
+      },
+      {
+        image: ticketIcon,
+        time: "12 билетов",
+        count: 20,
+      },
+      {
+        image: ticketIcon,
+        time: "30 билетов",
+        count: 30,
+      },
+      {
+        image: ticketIcon,
+        time: "70 билетов",
+        count: 40,
+      },
+      {
+        image: ticketIcon,
+        time: "20 билетов",
+        count: 50,
+      },
+    ],
+    btn: {
+      text: "Купить",
+      color: "#FFCD56",
+      textColor: "#911B00",
+      icon: key3,
+      handler: () => alert("123"),
+    },
+    info: 'Купить можно неограниченное количество раз, тикеты начисляются за 1 покупку',
+  };
+  
+
   return (
     <div className=" py-[24px] px-[17px] flex flex-col items-center gap-[20px] pb-[100px] h-full overflow-auto">
       <div className="elem-bg_green px-[8px] rounded-[40px] w-auto flex flex-row items-center gap-[8px]">
@@ -58,19 +106,8 @@ export default function Lottery() {
         <span>223</span>
         <span className="text-[#9B9B9B] text-sm font-normal">/билет</span>
       </p>
-      <p>
-        <span className="font-comic text-white text-[20px] font-bold">
-          1 билет ={" "}
-        </span>
-        <span className="font-comic text-gradient text-[20px] font-bold">
-          1 TON
-        </span>
-      </p>
-      <button
-        className={`font-comic text-sm text-black py-[15px] rounded-xl w-4/5 flex flex-row items-center justify-center gap-[10px] bg-gradient-to-b from-gradientStartColor to-gradientEndColor`}
-      >
-        Купить билет
-      </button>
+      
+      <BuyCard data={cardData} />
       <div
         className={`elem-bg_green px-[24px] py-[20px] rounded-[15px] w-full flex flex-col items-center gap-[12px]`}
       >

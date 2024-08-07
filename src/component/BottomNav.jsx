@@ -30,12 +30,11 @@ export default function BottomNav() {
                   <NavLink
                     key={i}
                     className={
-                      "font-comic text-gradient text-sm flex-1 flex flex-col items-center justify-end gap-[4px] z-10 mb-[8px]"
+                      `font-comic text-gradient text-sm flex-1 flex flex-col items-center justify-end gap-[4px] z-10 mb-[8px] ${link.disable ? 'opacity-30 pointer-events-none' : ''}`
                     }
                     to={link.path}
                   >
                     {({ isActive }) => {
-                      const normalOpacity = isActive || link.icon === "mamoth";
                       return (
                         <>
                           <img src={link.icon} alt="" />

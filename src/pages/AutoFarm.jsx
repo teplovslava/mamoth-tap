@@ -20,22 +20,22 @@ import star3 from "../assets/icons/icon__star3.svg";
 import star4 from "../assets/icons/icon__star4.svg";
 import star5 from "../assets/icons/icon__star5.svg";
 import coinsIcon from "../assets/icons/icon__coins.svg";
-
+import ticketIcon from "../assets/icons/icon__ticket.svg";
 
 export default function AutoFarm() {
   const [showModal, setShowModal] = useState(false);
   const [modalInfo, setModalInfo] = useState(null);
 
   const firstCardClick = (data) => {
-    setModalInfo(data)
-    setShowModal(true)
+    setModalInfo(data);
+    setShowModal(true);
   };
 
   useEffect(() => {
-    if(!showModal){
-        setModalInfo(null)
+    if (!showModal) {
+      setModalInfo(null);
     }
-  },[showModal])
+  }, [showModal]);
 
   const firstCardData = {
     index: 0,
@@ -46,27 +46,27 @@ export default function AutoFarm() {
     tarrifs: [
       {
         image: clock,
-        time:'X5',
+        time: "X5",
         count: 10,
       },
       {
         image: clock,
-        time:'X6',
+        time: "X6",
         count: 20,
       },
       {
         image: clock,
-        time:'X7',
+        time: "X7",
         count: 30,
       },
       {
         image: clock,
-        time:'X8',
+        time: "X8",
         count: 40,
       },
       {
         image: clock,
-        time:'X10',
+        time: "X10",
         count: 50,
       },
     ],
@@ -125,15 +125,41 @@ export default function AutoFarm() {
     title: "Покупка билетов лотереи",
     descr: "",
     image: case3,
-    tarrifs: [],
+    tarrifs: [
+      {
+        image: ticketIcon,
+        time: "1 билет",
+        count: 10,
+      },
+      {
+        image: ticketIcon,
+        time: "12 билетов",
+        count: 20,
+      },
+      {
+        image: ticketIcon,
+        time: "30 билетов",
+        count: 30,
+      },
+      {
+        image: ticketIcon,
+        time: "70 билетов",
+        count: 40,
+      },
+      {
+        image: ticketIcon,
+        time: "20 билетов",
+        count: 50,
+      },
+    ],
     btn: {
       text: "Купить",
       color: "#FFCD56",
       textColor: "#911B00",
       icon: key3,
-      handler: () => alert('123'),
+      handler: () => alert("123"),
     },
-    info: null,
+    info: 'Купить можно неограниченное количество раз, тикеты начисляются за 1 покупку',
   };
 
   const fourthCardData = {
@@ -148,31 +174,31 @@ export default function AutoFarm() {
         image: star1,
         time: "Сильвер",
         count: 1,
-        percents:50
+        percents: 50,
       },
       {
         image: star2,
         time: "Голд",
         count: 2,
-        percents:100
+        percents: 100,
       },
       {
         image: star3,
         time: "Платина",
         count: 3,
-        percents:150
+        percents: 150,
       },
       {
         image: star4,
         time: "Блек",
         count: 4,
-        percents:200
+        percents: 200,
       },
       {
         image: star5,
         time: "Ультима",
         count: 5,
-        percents:250
+        percents: 250,
       },
     ],
     btn: {
@@ -189,39 +215,38 @@ export default function AutoFarm() {
     index: 3,
     colorClass: "elem-bg_green",
     title: "Покупка Бустов",
-    descr:
-      "Покупай буст, получай увеличенное колличество монет",
+    descr: "Покупай буст, получай увеличенное колличество монет",
     image: case5,
     tarrifs: [
       {
         image: coinsIcon,
-        time: '+50',
+        time: "+50",
         count: 1,
-        percents:50
+        percents: 50,
       },
       {
         image: coinsIcon,
-        time: '+100',
+        time: "+100",
         count: 2,
-        percents:100
+        percents: 100,
       },
       {
         image: coinsIcon,
-        time: '+150',
+        time: "+150",
         count: 3,
-        percents:150
+        percents: 150,
       },
       {
         image: coinsIcon,
-        time: '+200',
+        time: "+200",
         count: 4,
-        percents:200
+        percents: 200,
       },
       {
         image: coinsIcon,
-        time: '+250',
+        time: "+250",
         count: 5,
-        percents:250
+        percents: 250,
       },
     ],
     btn: {
@@ -231,7 +256,7 @@ export default function AutoFarm() {
       icon: key4,
       handler: firstCardClick,
     },
-    info: 'Буст действует 30 дней с момента покупки',
+    info: "Буст действует 30 дней с момента покупки",
   };
 
   return (
@@ -241,7 +266,11 @@ export default function AutoFarm() {
       <BuyCard data={fifthCardData} />
       <BuyCard data={firstCardData} />
       <BuyCard data={thirdCardData} />
-      {showModal && createPortal(<BuyCardModal setShowModal={setShowModal} data={modalInfo}/>, document.body)}
+      {showModal &&
+        createPortal(
+          <BuyCardModal setShowModal={setShowModal} data={modalInfo} />,
+          document.body
+        )}
     </div>
   );
 }
