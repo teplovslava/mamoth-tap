@@ -44,7 +44,7 @@ export default function Guide() {
   return (
     <div className="flex flex-col py-[20px] h-full overlow">
       <div className="flex flex-row items-center gap-[5px] px-[10px]">
-        {pages.map((page, i) => {
+        {pages.map((_, i) => {
           const isActivePage = i === currentStep;
           return (
             <div
@@ -62,7 +62,7 @@ export default function Guide() {
           onClick={increaseStep}
           className={`font-comic text-sm text-black py-[15px] rounded-xl w-full flex flex-row items-center justify-center gap-[10px] bg-gradient-to-b from-gradientStartColor to-gradientEndColor`}
         >
-          Далее
+          {currentStep === pages.length - 1 ? "В игру" : "Далее"}
         </button>
       </div>
     </div>
@@ -165,7 +165,7 @@ function GuideThirdStep() {
         ))}
       </div>
 
-      <p className="text-white/50 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]">
+      <p className="text-white/90 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]">
         Плата взимается однократно, функцию можно включать каждый день.
       </p>
     </div>
@@ -234,7 +234,7 @@ function GuideFourthStep() {
         ))}
       </div>
 
-      <p className="text-white/50 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]">
+      <p className="text-white/90 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]">
         Плата взимается однократно.
       </p>
     </div>
@@ -332,35 +332,35 @@ function GuideSixthStep() {
       time: "Сильвер",
       count: "Розыгрыш Lamborghini",
       description: "1000 победителей получают по 100 TON",
-      price:"100k"
+      price: "100k",
     },
     {
       image: star2,
       time: "Голд",
       count: "Розыгрыш квартиры стоимостью $500,000",
       description: "1000 победителей получают по  200 TON ",
-      price:"200k"
+      price: "200k",
     },
     {
       image: star3,
       time: "Платина",
       count: "Розыгрыш $1,000,000",
       description: "1000 победителей получают по  300 TON ",
-      price:"300k"
+      price: "300k",
     },
     {
       image: star4,
       time: "Блек",
       count: "Розыгрыш $5,000,000",
       description: "1000 победителей получают по  400 TON ",
-      price:"400k"
+      price: "400k",
     },
     {
       image: star5,
       time: "Ультима",
       count: "Розыгрыш $10,000,000",
       description: "1000 победителей получают по  1000 TON ",
-      price:"1000k"
+      price: "1000k",
     },
   ];
 
@@ -402,7 +402,9 @@ function GuideSixthStep() {
         ))}
       </div>
 
-      <p className="text-white/50 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]"></p>
+      <p className="text-white/90 font-bold font-comic text-sm px-[10px] text-center mt-auto mb-[20px]">
+        Обязательное условие наличие статуса и покупки
+      </p>
     </div>
   );
 }
@@ -411,31 +413,31 @@ function GuideSevenStep() {
   const data = [
     {
       image: coinsIcon,
-      time: 50,
+      time: "50%",
       count: 1,
       percents: 50,
     },
     {
       image: coinsIcon,
-      time: 100,
+      time: "100%",
       count: 2,
       percents: 100,
     },
     {
       image: coinsIcon,
-      time: 150,
+      time: "150%",
       count: 3,
       percents: 150,
     },
     {
       image: coinsIcon,
-      time: 200,
+      time: "200%",
       count: 4,
       percents: 200,
     },
     {
       image: coinsIcon,
-      time: 250,
+      time: "250%",
       count: 5,
       percents: 250,
     },
@@ -467,11 +469,6 @@ function GuideSevenStep() {
                 +{tarrif.time}
               </p>
             </div>
-            {tarrif.percents && (
-              <span className="text-white font-bold font-comic text-xl">
-                + {tarrif.percents}%
-              </span>
-            )}
             <p className="text-[#45E9B8] font-bold font-comic text-xl">
               {tarrif.count} TON
             </p>

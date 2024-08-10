@@ -109,7 +109,7 @@ export default function ControlPanel({ count }) {
               style={{color:colors[level - 1]}}
               className={`text-sm font-comic font-bold flex flex-row items-center`}
             >
-              / <Timer time={1722459094734}/>
+              / <Timer time={1723459094734}/>
             </span>
           </p>
         </div>

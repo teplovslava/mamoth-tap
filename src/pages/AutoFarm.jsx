@@ -220,33 +220,28 @@ export default function AutoFarm() {
     tarrifs: [
       {
         image: coinsIcon,
-        time: "+50",
+        time: "+50%",
         count: 1,
-        percents: 50,
       },
       {
         image: coinsIcon,
-        time: "+100",
+        time: "+100%",
         count: 2,
-        percents: 100,
       },
       {
         image: coinsIcon,
-        time: "+150",
+        time: "+150%",
         count: 3,
-        percents: 150,
       },
       {
         image: coinsIcon,
-        time: "+200",
+        time: "+200%",
         count: 4,
-        percents: 200,
       },
       {
         image: coinsIcon,
-        time: "+250",
+        time: "+250%",
         count: 5,
-        percents: 250,
       },
     ],
     btn: {
